@@ -1,0 +1,73 @@
+.reveal    { opacity: 0; transform: translateY(34px); transition: opacity .8s, transform .8s; }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ── Hero ──────────────────────────────────────────────────────────── */
+.cff-hero { padding: 170px 0 100px; min-height: 100vh; }
+.cff-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(120deg, rgba(10,50,70,.92), rgba(20,70,90,.65));
+}
+
+/* ── About ─────────────────────────────────────────────────────────── */
+.cff-about-sec { padding: 100px 0; }
+.cff-about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.cff-icon-visual { display: flex; justify-content: center; }
+.cff-fridge-card {
+  background: linear-gradient(135deg, #e0f4ff, #c8eaff);
+  border-radius: var(--radius); padding: 48px 40px; text-align: center;
+  box-shadow: var(--shadow); max-width: 340px;
+}
+.cff-fridge-icon { font-size: 80px; margin-bottom: 20px; }
+.cff-fridge-tagline b { display: block; font-family: 'Fraunces', serif; font-size: 26px; color: #0a3246; line-height: 1.2; }
+.cff-fridge-tagline span { font-size: 15px; color: #2a6080; margin-top: 10px; display: block; }
+
+/* ── How it works ──────────────────────────────────────────────────── */
+.cff-how-sec { padding: 80px 0; background: var(--cream-2); }
+.cff-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
+.cff-step {
+  background: var(--white); border-radius: var(--radius); padding: 36px 28px;
+  box-shadow: var(--shadow-sm); text-align: center;
+  transition: transform .2s, box-shadow .2s;
+}
+.cff-step:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.cff-step-n { font-family: 'Fraunces', serif; font-size: 13px; font-weight: 700; letter-spacing: .1em; color: var(--muted); }
+.cff-step-ico { font-size: 44px; margin: 12px 0; }
+.cff-step h3 { font-size: 20px; color: var(--ink); margin-bottom: 10px; }
+.cff-step p { font-size: 14.5px; color: var(--muted); line-height: 1.6; }
+
+/* ── Rules + Locations ─────────────────────────────────────────────── */
+.cff-rules-sec { padding: 80px 0; }
+.cff-rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+.cff-rules-card,
+.cff-locations-card {
+  background: var(--white); border-radius: var(--radius); padding: 40px;
+  box-shadow: var(--shadow-sm);
+}
+.cff-rules-card h3,
+.cff-locations-card h3 { font-size: 22px; margin-bottom: 6px; }
+.cff-rules-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.cff-rules-list li { display: flex; align-items: center; gap: 10px; font-size: 15px; color: var(--ink); }
+.cff-check { width: 24px; height: 24px; border-radius: 50%; background: #e8f7dc; color: var(--green-dark); display: grid; place-items: center; font-size: 13px; font-weight: 700; flex: none; }
+.cff-location { border: 1.5px solid #e4ddca; border-radius: 14px; padding: 18px 20px; margin-bottom: 14px; }
+.cff-location b { display: block; font-size: 15px; margin-bottom: 6px; }
+.cff-location p { font-size: 14px; color: var(--muted); margin: 2px 0; }
+.cff-map-link { display: inline-block; margin-top: 10px; font-size: 13px; font-weight: 700; color: var(--orange-dark); }
+.cff-map-link:hover { color: var(--orange); }
+.cff-add-location { border-top: 1.5px solid #e4ddca; padding-top: 20px; margin-top: 6px; }
+.cff-add-location p { font-size: 15px; color: var(--muted); }
+.cff-add-location .btn { font-size: 13.5px; padding: 10px 20px; }
+
+/* ── CTA ───────────────────────────────────────────────────────────── */
+.cff-cta { background: var(--green-deep); padding: 100px 0; text-align: center; }
+.cff-cta-inner { max-width: 600px; margin: 0 auto; }
+.cff-cta .eyebrow-tag { background: rgba(255,255,255,.18); }
+.cff-cta h2 { font-family: 'Fraunces', serif; font-size: clamp(30px, 4vw, 50px); color: #fff; margin: 16px 0; }
+.cff-cta h2 em { font-style: italic; color: #b8f0a0; }
+.cff-cta p { color: rgba(255,255,255,.88); font-size: 17px; line-height: 1.7; }
+
+/* ── Responsive ────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .cff-about-grid { grid-template-columns: 1fr; }
+  .cff-steps { grid-template-columns: 1fr; }
+  .cff-rules-grid { grid-template-columns: 1fr; }
+}
