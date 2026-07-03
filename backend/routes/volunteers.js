@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const Volunteer = require("../models/Volunteer");
-const { sendVolunteerWelcome } = require("../mailer");
 
 // POST /api/volunteers — public signup
 router.post("/", async (req, res) => {
@@ -9,14 +8,6 @@ router.post("/", async (req, res) => {
 
   try {
     const doc = await Volunteer.create({ first, last, email, phone, role, note });
-
-    // Fire welcome email — don't fail the request if email errors
-    sendVolunteerWelcome({ first, email }).then(() => {
-      Volunteer.findByIdAndUpdate(doc._id, { emailSent: true }).exec();
-    }).catch((err) => {
-      console.error("Welcome email failed:", err.message);
-    });
-
     res.status(201).json({ ok: true, id: doc._id });
   } catch (err) {
     console.error(err);

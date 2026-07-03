@@ -8,7 +8,6 @@ const contactSchema = new mongoose.Schema(
     phone:   { type: String, trim: true },
     topic:   { type: String, trim: true },
     message:   { type: String, trim: true },
-    repliedAt: { type: Date, default: null },
   },
   { timestamps: true }
 );

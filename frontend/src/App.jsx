@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Chatbot from "./chatbot/Chatbot";
 import LandingPage from "./pages/LandingPage";
 import AboutPage from "./pages/AboutPage";
 import VolunteerPage from "./pages/VolunteerPage";
@@ -25,6 +26,7 @@ function App() {
         <Route path="/community-fridge" element={<CommunityFridgePage />} />
         <Route path="/team" element={<TeamPage />} />
       </Routes>
+      <Chatbot />
     </BrowserRouter>
   );
 }
