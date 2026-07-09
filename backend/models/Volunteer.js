@@ -8,6 +8,7 @@ const volunteerSchema = new mongoose.Schema(
     phone:  { type: String, trim: true },
     role:   { type: String, trim: true },
     note:   { type: String, trim: true },
+    emailSent: { type: Boolean, default: false },
   },
   { timestamps: true }
 );
