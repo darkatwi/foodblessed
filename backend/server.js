@@ -36,7 +36,7 @@ app.get("/api/admin/contacts", adminOnly, async (req, res) => {
 });
 
 // ── Connect & listen ────────────────────────────────────────────────────────
-const mongoUri = `${process.env.MONGO_URI}/${process.env.DB_NAME}`;
+const mongoUri = process.env.MONGO_URI.replace(/\/\?/, `/${process.env.DB_NAME}?`);
 mongoose
   .connect(mongoUri)
   .then(() => {
